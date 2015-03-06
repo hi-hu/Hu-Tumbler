@@ -13,6 +13,12 @@
 		B8E1E27F1AA951580061525A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8E1E27E1AA951580061525A /* Images.xcassets */; };
 		B8E1E2821AA951580061525A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8E1E2801AA951580061525A /* LaunchScreen.xib */; };
 		B8E1E28E1AA951580061525A /* Hu_TumblerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1E28D1AA951580061525A /* Hu_TumblerTests.swift */; };
+		B8E1E2991AA9FF110061525A /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1E2981AA9FF110061525A /* MainContainerViewController.swift */; };
+		B8E1E29B1AA9FF9E0061525A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1E29A1AA9FF9E0061525A /* HomeViewController.swift */; };
+		B8E1E29D1AAA00B30061525A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1E29C1AAA00B30061525A /* SearchViewController.swift */; };
+		B8E1E29F1AAA01000061525A /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1E29E1AAA01000061525A /* ComposeViewController.swift */; };
+		B8E1E2A11AAA03F00061525A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1E2A01AAA03F00061525A /* AccountViewController.swift */; };
+		B8E1E2A31AAA04900061525A /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1E2A21AAA04900061525A /* TrendingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,12 @@
 		B8E1E2871AA951580061525A /* Hu-TumblerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hu-TumblerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E1E28C1AA951580061525A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8E1E28D1AA951580061525A /* Hu_TumblerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hu_TumblerTests.swift; sourceTree = "<group>"; };
+		B8E1E2981AA9FF110061525A /* MainContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContainerViewController.swift; sourceTree = "<group>"; };
+		B8E1E29A1AA9FF9E0061525A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B8E1E29C1AAA00B30061525A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B8E1E29E1AAA01000061525A /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		B8E1E2A01AAA03F00061525A /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		B8E1E2A21AAA04900061525A /* TrendingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +91,7 @@
 			children = (
 				B8E1E2771AA951580061525A /* AppDelegate.swift */,
 				B8E1E2791AA951580061525A /* ViewController.swift */,
+				B8E1E2971AA9FEF80061525A /* View Controllers */,
 				B8E1E27B1AA951580061525A /* Main.storyboard */,
 				B8E1E27E1AA951580061525A /* Images.xcassets */,
 				B8E1E2801AA951580061525A /* LaunchScreen.xib */,
@@ -110,6 +123,19 @@
 				B8E1E28C1AA951580061525A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B8E1E2971AA9FEF80061525A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B8E1E2981AA9FF110061525A /* MainContainerViewController.swift */,
+				B8E1E29A1AA9FF9E0061525A /* HomeViewController.swift */,
+				B8E1E29C1AAA00B30061525A /* SearchViewController.swift */,
+				B8E1E29E1AAA01000061525A /* ComposeViewController.swift */,
+				B8E1E2A01AAA03F00061525A /* AccountViewController.swift */,
+				B8E1E2A21AAA04900061525A /* TrendingViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,8 +238,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8E1E29D1AAA00B30061525A /* SearchViewController.swift in Sources */,
+				B8E1E2A31AAA04900061525A /* TrendingViewController.swift in Sources */,
 				B8E1E27A1AA951580061525A /* ViewController.swift in Sources */,
+				B8E1E2A11AAA03F00061525A /* AccountViewController.swift in Sources */,
+				B8E1E2991AA9FF110061525A /* MainContainerViewController.swift in Sources */,
+				B8E1E29F1AAA01000061525A /* ComposeViewController.swift in Sources */,
 				B8E1E2781AA951580061525A /* AppDelegate.swift in Sources */,
+				B8E1E29B1AA9FF9E0061525A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
