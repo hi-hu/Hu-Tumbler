@@ -10,12 +10,42 @@ import UIKit
 
 class MainContainerViewController: UIViewController {
 
-    @IBOutlet weak var MainContainerVC: UIView!
+    
+    @IBOutlet weak var mainContainerVC: UIView!
+    
+    // array of tab controller buttons
+    @IBOutlet var tabControlButtons: [UIButton]!
+    
+    // array holding the views
+    var vcArray = [UIViewController]()
+    var homeVC: HomeViewController!
+    var searchVC: SearchViewController!
+    var composeVC: ComposeViewController!
+    var accountVC: AccountViewController!
+    var trendingVC: TrendingViewController!
+    
+    // index defaulted to home
+    var selectedIndex: Int! = 0
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // view controller instantiation
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        homeVC = storyboard.instantiateViewControllerWithIdentifier("homeSBID") as HomeViewController
+        searchVC = storyboard.instantiateViewControllerWithIdentifier("searchSBID") as SearchViewController
+        composeVC = storyboard.instantiateViewControllerWithIdentifier("composeSBID") as ComposeViewController
+        accountVC = storyboard.instantiateViewControllerWithIdentifier("accountSBID") as AccountViewController
+        trendingVC = storyboard.instantiateViewControllerWithIdentifier("trendingSBID") as TrendingViewController
+        
+        // add the instantiated views into the array
+        vcArray = [homeVC, searchVC, composeVC, accountVC, trendingVC]
+        
+        // default to homepage
+        displayContentController(homeVC)
+        tabControlButtons[0].selected = true
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,7 +53,29 @@ class MainContainerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func tabBtnDidPress(sender: AnyObject) {
+        var selectedVC = vcArray[selectedIndex]
+        // remove current view
+        
+        
+        // add new view
+        selectedIndex = sender.tag
+        displayContentController(vcArray[selectedIndex])
+        
+    }
 
+    func displayContentController(content: UIViewController) {
+        addChildViewController(content)
+        mainContainerVC.addSubview(content.view)
+        content.didMoveToParentViewController(self)
+    }
+    
+    func hideContentController(content: UIViewController) {
+        content.willMoveToParentViewController(nil)
+        content.view.removeFromSuperview()
+        content.removeFromParentViewController()
+    }
+    
     /*
     // MARK: - Navigation
 

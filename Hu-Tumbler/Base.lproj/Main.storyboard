@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="twh-fL-uRf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -17,58 +17,79 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" id="l7b-iH-i87">
+                            <view contentMode="scaleToFill" id="l7b-iH-i87" userLabel="tab view controller">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xLP-8F-m7d" userLabel="btn compose">
-                                        <rect key="frame" x="135" y="4" width="50" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="compose_button">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected" backgroundImage="compose_button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dBd-MX-g1J" userLabel="btn account">
-                                        <rect key="frame" x="212" y="5" width="35" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="account_icon">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected" backgroundImage="account_selected_icon"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xr7-v5-U6j" userLabel="btn trending">
-                                        <rect key="frame" x="265" y="5" width="35" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="trending_icon">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected" backgroundImage="trending_selected_icon"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3NG-vD-adr" userLabel="btn home">
                                         <rect key="frame" x="20" y="5" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <state key="normal" backgroundImage="home_icon">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="selected" backgroundImage="home_selected_icon"/>
+                                        <connections>
+                                            <action selector="tabBtnDidPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5TD-nf-RX8"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hFX-K5-J1X" userLabel="btn search">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hFX-K5-J1X" userLabel="btn search">
                                         <rect key="frame" x="74" y="5" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="search_icon">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="selected" backgroundImage="search_selected_icon"/>
+                                        <connections>
+                                            <action selector="tabBtnDidPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VB9-AD-GVP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xLP-8F-m7d" userLabel="btn compose">
+                                        <rect key="frame" x="135" y="4" width="50" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="compose_button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="compose_button"/>
+                                        <connections>
+                                            <action selector="tabBtnDidPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gUo-PG-gS3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dBd-MX-g1J" userLabel="btn account">
+                                        <rect key="frame" x="212" y="5" width="35" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="account_icon">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="account_selected_icon"/>
+                                        <connections>
+                                            <action selector="tabBtnDidPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="24Y-Uq-ARP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xr7-v5-U6j" userLabel="btn trending">
+                                        <rect key="frame" x="265" y="5" width="35" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="trending_icon">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="trending_selected_icon"/>
+                                        <connections>
+                                            <action selector="tabBtnDidPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eZl-qt-wsO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.19881059570040505" green="0.26523278649806942" blue="0.36351647347579763" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.20009056423442037" green="0.25822614930672683" blue="0.30784026791246971" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="MainContainerVC" destination="lTi-0F-rhJ" id="HzC-bi-EdJ"/>
+                        <outlet property="mainContainerVC" destination="lTi-0F-rhJ" id="VcH-fp-LmI"/>
+                        <outletCollection property="tabControlButtons" destination="3NG-vD-adr" collectionClass="NSMutableArray" id="jWH-5r-CwE"/>
+                        <outletCollection property="tabControlButtons" destination="hFX-K5-J1X" collectionClass="NSMutableArray" id="iye-hw-XOW"/>
+                        <outletCollection property="tabControlButtons" destination="xLP-8F-m7d" collectionClass="NSMutableArray" id="69A-bJ-rcg"/>
+                        <outletCollection property="tabControlButtons" destination="dBd-MX-g1J" collectionClass="NSMutableArray" id="Udg-RP-XpS"/>
+                        <outletCollection property="tabControlButtons" destination="xr7-v5-U6j" collectionClass="NSMutableArray" id="mMN-fG-VAQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -78,7 +99,7 @@
         <!--Home View Controller-->
         <scene sceneID="41f-Y4-ISi">
             <objects>
-                <viewController id="34p-pn-2Ui" customClass="HomeViewController" customModule="Hu_Tumbler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeSBID" id="34p-pn-2Ui" customClass="HomeViewController" customModule="Hu_Tumbler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lWQ-ID-xH0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,7 +126,7 @@
         <!--Search View Controller-->
         <scene sceneID="h93-FW-GFf">
             <objects>
-                <viewController id="ghU-Eg-2YG" customClass="SearchViewController" customModule="Hu_Tumbler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchSBID" id="ghU-Eg-2YG" customClass="SearchViewController" customModule="Hu_Tumbler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kzz-PA-v4V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,7 +145,7 @@
         <!--Account View Controller-->
         <scene sceneID="hVx-94-cF6">
             <objects>
-                <viewController id="Vl8-Qe-Je9" customClass="AccountViewController" customModule="Hu_Tumbler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="accountSBID" id="Vl8-Qe-Je9" customClass="AccountViewController" customModule="Hu_Tumbler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x37-iP-PT5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,7 +164,7 @@
         <!--Trending View Controller-->
         <scene sceneID="91Y-0d-dLg">
             <objects>
-                <viewController id="twh-fL-uRf" customClass="TrendingViewController" customModule="Hu_Tumbler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="trendingSBID" id="twh-fL-uRf" customClass="TrendingViewController" customModule="Hu_Tumbler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vH5-yr-20X">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1217"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -174,7 +195,7 @@
         <!--Compose View Controller-->
         <scene sceneID="GDc-e5-shp">
             <objects>
-                <viewController id="K8R-ox-kdJ" customClass="ComposeViewController" customModule="Hu_Tumbler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="composeSBID" id="K8R-ox-kdJ" customClass="ComposeViewController" customModule="Hu_Tumbler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" alpha="0.80000000000000004" contentMode="scaleToFill" id="9P0-rr-iZT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
