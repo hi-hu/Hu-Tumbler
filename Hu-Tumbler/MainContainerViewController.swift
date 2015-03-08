@@ -9,7 +9,6 @@
 import UIKit
 
 class MainContainerViewController: UIViewController {
-
     
     @IBOutlet weak var mainContainerVC: UIView!
     
@@ -27,12 +26,16 @@ class MainContainerViewController: UIViewController {
     // index defaulted to home
     var selectedIndex: Int! = 0
     
+    // custom transition
+    var fadeTransition: FadeTransition!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        // set the status bar style to light
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-
+        
         // view controller instantiation
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         homeVC = storyboard.instantiateViewControllerWithIdentifier("homeSBID") as HomeViewController
@@ -42,10 +45,10 @@ class MainContainerViewController: UIViewController {
         activityVC = storyboard.instantiateViewControllerWithIdentifier("searchSBID") as SearchViewController
         
         // add the instantiated views into the array
-        vcArray = [homeVC, searchVC, composeVC, accountVC, activityVC]
+        vcArray = [homeVC, searchVC, accountVC, activityVC]
         
         // default to homepage
-        displayContentController(homeVC)
+        displayContentController(mainContainerVC, content: homeVC)
         tabControlButtons[0].selected = true
         
     }
@@ -57,39 +60,48 @@ class MainContainerViewController: UIViewController {
     
     @IBAction func tabBtnDidPress(sender: AnyObject) {
         
-        // current view
-        var selectedVC = vcArray[selectedIndex]
-        tabControlButtons[selectedIndex].selected = false
-        
-        // remove current view
-        hideContentController(selectedVC)
-        
-        // add new view
+        var oldIndex = selectedIndex
         selectedIndex = sender.tag
-        displayContentController(vcArray[selectedIndex])
+        
+        // deactivate button  and remove current view
+        tabControlButtons[oldIndex].selected = false
+        hideContentController(mainContainerVC, content: vcArray[oldIndex])
+        
+        // activate button add new selected view
         tabControlButtons[selectedIndex].selected = true
+        displayContentController(mainContainerVC, content: vcArray[selectedIndex])
     }
 
-    func displayContentController(content: UIViewController) {
+    @IBAction func composeDidPress(sender: AnyObject) {
+        
+        
+        performSegueWithIdentifier("composeSegue", sender: self)
+
+    }
+
+    func displayContentController(container: UIView, content: UIViewController) {
         addChildViewController(content)
         mainContainerVC.addSubview(content.view)
         content.didMoveToParentViewController(self)
     }
     
-    func hideContentController(content: UIViewController) {
+    func hideContentController(container: UIView, content: UIViewController) {
         content.willMoveToParentViewController(nil)
         content.view.removeFromSuperview()
         content.removeFromParentViewController()
     }
     
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+
+        var destinationViewController = segue.destinationViewController as ComposeViewController
+
+        fadeTransition = FadeTransition()
+        fadeTransition.duration = 0.3
+        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+        destinationViewController.transitioningDelegate = fadeTransition
     }
-    */
 
 }

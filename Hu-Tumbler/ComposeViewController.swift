@@ -10,6 +10,16 @@ import UIKit
 
 class ComposeViewController: UIViewController {
 
+    @IBOutlet weak var textBtn: UIButton!
+    @IBOutlet weak var photoBtn: UIButton!
+    @IBOutlet weak var quoteBtn: UIButton!
+    @IBOutlet weak var linkBtn: UIButton!
+    @IBOutlet weak var chatBtn: UIButton!
+    @IBOutlet weak var videoBtn: UIButton!
+    
+    text
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +31,7 @@ class ComposeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func dismissDidPress(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
-    */
-
 }

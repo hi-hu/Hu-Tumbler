@@ -45,7 +45,7 @@
                                             <action selector="tabBtnDidPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VB9-AD-GVP"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xLP-8F-m7d" userLabel="btn compose">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xLP-8F-m7d" userLabel="btn compose">
                                         <rect key="frame" x="135" y="4" width="50" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -54,10 +54,10 @@
                                         </state>
                                         <state key="selected" backgroundImage="compose_button"/>
                                         <connections>
-                                            <action selector="tabBtnDidPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gUo-PG-gS3"/>
+                                            <action selector="composeDidPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="WRn-hJ-83L"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dBd-MX-g1J" userLabel="btn account">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dBd-MX-g1J" userLabel="btn account">
                                         <rect key="frame" x="212" y="5" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -69,7 +69,7 @@
                                             <action selector="tabBtnDidPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="24Y-Uq-ARP"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xr7-v5-U6j" userLabel="btn trending">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xr7-v5-U6j" userLabel="btn trending">
                                         <rect key="frame" x="265" y="5" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -95,9 +95,9 @@
                         <outlet property="mainContainerVC" destination="lTi-0F-rhJ" id="VcH-fp-LmI"/>
                         <outletCollection property="tabControlButtons" destination="3NG-vD-adr" collectionClass="NSMutableArray" id="jWH-5r-CwE"/>
                         <outletCollection property="tabControlButtons" destination="hFX-K5-J1X" collectionClass="NSMutableArray" id="iye-hw-XOW"/>
-                        <outletCollection property="tabControlButtons" destination="xLP-8F-m7d" collectionClass="NSMutableArray" id="69A-bJ-rcg"/>
                         <outletCollection property="tabControlButtons" destination="dBd-MX-g1J" collectionClass="NSMutableArray" id="Udg-RP-XpS"/>
                         <outletCollection property="tabControlButtons" destination="xr7-v5-U6j" collectionClass="NSMutableArray" id="mMN-fG-VAQ"/>
+                        <segue destination="K8R-ox-kdJ" kind="modal" identifier="composeSegue" id="6gA-RE-76M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -275,9 +275,27 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gWh-xh-cHk">
+                                <rect key="frame" x="0.0" y="515" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissDidPress:" destination="K8R-ox-kdJ" eventType="touchUpInside" id="XER-dq-5Kr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20784313725490197" green="0.27450980392156865" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="chatBtn" destination="fM1-8k-Ou9" id="yco-ev-t7n"/>
+                        <outlet property="linkBtn" destination="HUO-T1-kCy" id="IG2-Jy-453"/>
+                        <outlet property="photoBtn" destination="n4q-tA-Y5G" id="YWk-0O-rwN"/>
+                        <outlet property="quoteBtn" destination="IhT-F6-iPc" id="14B-T0-hWZ"/>
+                        <outlet property="textBtn" destination="Vnl-gD-ucB" id="mKH-lj-YV7"/>
+                        <outlet property="videoBtn" destination="HRi-SH-D3I" id="a6U-yl-o6z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOy-B8-457" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
