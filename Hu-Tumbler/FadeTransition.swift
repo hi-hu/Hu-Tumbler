@@ -12,9 +12,13 @@ class FadeTransition: BaseTransition {
     
     override func presentTransition(containerView: UIView, fromViewController: UIViewController, toViewController: UIViewController) {
         
-        toViewController.view.alpha = 0
+        var composeView = toViewController as ComposeViewController
+        
+        composeView.view.alpha = 0
+        composeView.doAnimate(true)
+        
         UIView.animateWithDuration(duration, animations: {
-            toViewController.view.alpha = 1
+            composeView.view.alpha = 1
         }) { (finished: Bool) -> Void in
             self.finish()
         }
@@ -22,9 +26,13 @@ class FadeTransition: BaseTransition {
     
     override func dismissTransition(containerView: UIView, fromViewController: UIViewController, toViewController: UIViewController) {
         
-        fromViewController.view.alpha = 1
-        UIView.animateWithDuration(duration, animations: {
-            fromViewController.view.alpha = 0
+        var composeView = fromViewController as ComposeViewController
+        
+        composeView.view.alpha = 1
+        composeView.doAnimate(false)
+        
+        UIView.animateWithDuration(0.8, animations: {
+            composeView.view.alpha = 0
         }) { (finished: Bool) -> Void in
             self.finish()
         }
