@@ -10,6 +10,10 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var loginModalView: UIView!
+    @IBOutlet weak var loginForm: UIView!
+    @IBOutlet weak var emailTF: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +27,5 @@ class HomeViewController: UIViewController {
     
     @IBAction func loginDidPress(sender: AnyObject) {
         // show login field
-        
     }
 }

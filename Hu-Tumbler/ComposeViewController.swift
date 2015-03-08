@@ -27,8 +27,6 @@ class ComposeViewController: UIViewController {
         super.viewDidLoad()
         
         btnArray = [textBtn, photoBtn, quoteBtn, linkBtn, chatBtn, videoBtn]
-
-        doAnimate(true)
     }
 
     override func didReceiveMemoryWarning() {
