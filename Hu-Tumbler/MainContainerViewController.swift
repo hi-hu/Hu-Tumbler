@@ -19,10 +19,10 @@ class MainContainerViewController: UIViewController {
     // array holding the views
     var vcArray = [UIViewController]()
     var homeVC: HomeViewController!
-    var searchVC: SearchViewController!
+    var searchVC: TrendingViewController!
     var composeVC: ComposeViewController!
     var accountVC: AccountViewController!
-    var trendingVC: TrendingViewController!
+    var activityVC: SearchViewController!
     
     // index defaulted to home
     var selectedIndex: Int! = 0
@@ -30,17 +30,19 @@ class MainContainerViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
 
         // view controller instantiation
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         homeVC = storyboard.instantiateViewControllerWithIdentifier("homeSBID") as HomeViewController
-        searchVC = storyboard.instantiateViewControllerWithIdentifier("searchSBID") as SearchViewController
+        searchVC = storyboard.instantiateViewControllerWithIdentifier("trendingSBID") as TrendingViewController
         composeVC = storyboard.instantiateViewControllerWithIdentifier("composeSBID") as ComposeViewController
         accountVC = storyboard.instantiateViewControllerWithIdentifier("accountSBID") as AccountViewController
-        trendingVC = storyboard.instantiateViewControllerWithIdentifier("trendingSBID") as TrendingViewController
+        activityVC = storyboard.instantiateViewControllerWithIdentifier("searchSBID") as SearchViewController
         
         // add the instantiated views into the array
-        vcArray = [homeVC, searchVC, composeVC, accountVC, trendingVC]
+        vcArray = [homeVC, searchVC, composeVC, accountVC, activityVC]
         
         // default to homepage
         displayContentController(homeVC)
@@ -54,14 +56,18 @@ class MainContainerViewController: UIViewController {
     }
     
     @IBAction func tabBtnDidPress(sender: AnyObject) {
-        var selectedVC = vcArray[selectedIndex]
-        // remove current view
         
+        // current view
+        var selectedVC = vcArray[selectedIndex]
+        tabControlButtons[selectedIndex].selected = false
+        
+        // remove current view
+        hideContentController(selectedVC)
         
         // add new view
         selectedIndex = sender.tag
         displayContentController(vcArray[selectedIndex])
-        
+        tabControlButtons[selectedIndex].selected = true
     }
 
     func displayContentController(content: UIViewController) {
