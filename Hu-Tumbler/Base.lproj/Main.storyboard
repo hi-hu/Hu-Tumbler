@@ -85,13 +85,14 @@
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.25882352941176467" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="explore_popup" id="Gfr-a4-BOQ">
-                                <rect key="frame" x="-2" y="450" width="185" height="77"/>
+                                <rect key="frame" x="-2" y="454" width="185" height="77"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="exploreImage" destination="Gfr-a4-BOQ" id="6ln-sD-ozf"/>
                         <outlet property="mainContainerVC" destination="lTi-0F-rhJ" id="VcH-fp-LmI"/>
                         <outletCollection property="tabControlButtons" destination="3NG-vD-adr" collectionClass="NSMutableArray" id="jWH-5r-CwE"/>
                         <outletCollection property="tabControlButtons" destination="hFX-K5-J1X" collectionClass="NSMutableArray" id="iye-hw-XOW"/>
@@ -124,6 +125,16 @@
                                 <rect key="frame" x="0.0" y="253" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="I4O-PJ-My3">
+                                <rect key="frame" x="258" y="27" width="56" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginDidPress:" destination="34p-pn-2Ui" eventType="touchUpInside" id="Fky-dg-x2h"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                 </viewController>
@@ -188,27 +199,28 @@
             <objects>
                 <viewController storyboardIdentifier="trendingSBID" id="twh-fL-uRf" customClass="TrendingViewController" customModule="Hu_Tumbler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vH5-yr-20X">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1217"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1261"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="tf8-nK-XtN">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="1217"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1305"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="search_feed" id="8nf-97-mkZ">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trending_feed" id="FII-WK-vXI">
-                                        <rect key="frame" x="0.0" y="20" width="320" height="1217"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" image="trending_feed" id="FII-WK-vXI">
+                                        <rect key="frame" x="0.0" y="20" width="320" height="1318"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                 </subviews>
                             </scrollView>
                         </subviews>
+                        <color key="backgroundColor" red="0.20784313725490197" green="0.27450980392156865" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="1217"/>
+                    <size key="freeformSize" width="320" height="1261"/>
                     <connections>
                         <outlet property="trendingFeedImage" destination="FII-WK-vXI" id="hNO-WV-gFc"/>
                         <outlet property="trendingSV" destination="tf8-nK-XtN" id="583-aB-1mn"/>
@@ -222,7 +234,7 @@
         <scene sceneID="GDc-e5-shp">
             <objects>
                 <viewController storyboardIdentifier="composeSBID" id="K8R-ox-kdJ" customClass="ComposeViewController" customModule="Hu_Tumbler" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" alpha="0.80000000000000004" contentMode="scaleToFill" id="9P0-rr-iZT">
+                    <view key="view" alpha="0.85999999999999999" contentMode="scaleToFill" id="9P0-rr-iZT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -293,7 +305,7 @@
                         <outlet property="linkBtn" destination="HUO-T1-kCy" id="IG2-Jy-453"/>
                         <outlet property="photoBtn" destination="n4q-tA-Y5G" id="YWk-0O-rwN"/>
                         <outlet property="quoteBtn" destination="IhT-F6-iPc" id="14B-T0-hWZ"/>
-                        <outlet property="textBtn" destination="Vnl-gD-ucB" id="mKH-lj-YV7"/>
+                        <outlet property="textBtn" destination="Vnl-gD-ucB" id="WFc-bA-p8g"/>
                         <outlet property="videoBtn" destination="HRi-SH-D3I" id="a6U-yl-o6z"/>
                     </connections>
                 </viewController>

@@ -11,6 +11,7 @@ import UIKit
 class MainContainerViewController: UIViewController {
     
     @IBOutlet weak var mainContainerVC: UIView!
+    @IBOutlet weak var exploreImage: UIImageView!
     
     // array of tab controller buttons
     @IBOutlet var tabControlButtons: [UIButton]!
@@ -28,7 +29,7 @@ class MainContainerViewController: UIViewController {
     
     // custom transition
     var fadeTransition: FadeTransition!
-    
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -51,6 +52,14 @@ class MainContainerViewController: UIViewController {
         displayContentController(mainContainerVC, content: homeVC)
         tabControlButtons[0].selected = true
         
+        // animate the explore bubble to bob up and down
+        UIView.animateWithDuration(1.0, delay: 0, options: UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse, animations: { () -> Void in
+            
+            self.exploreImage.center.y = self.exploreImage.center.y - 6
+            
+            }) { (Bool) -> Void in
+                // code
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +72,10 @@ class MainContainerViewController: UIViewController {
         var oldIndex = selectedIndex
         selectedIndex = sender.tag
         
+        if selectedIndex == 1 {
+            exploreImage.hidden = true
+        }
+        
         // deactivate button  and remove current view
         tabControlButtons[oldIndex].selected = false
         hideContentController(mainContainerVC, content: vcArray[oldIndex])
@@ -72,19 +85,19 @@ class MainContainerViewController: UIViewController {
         displayContentController(mainContainerVC, content: vcArray[selectedIndex])
     }
 
+    // perform custom segue
     @IBAction func composeDidPress(sender: AnyObject) {
-        
-        
         performSegueWithIdentifier("composeSegue", sender: self)
-
     }
 
+    // add a subbview to the specified container
     func displayContentController(container: UIView, content: UIViewController) {
         addChildViewController(content)
         mainContainerVC.addSubview(content.view)
         content.didMoveToParentViewController(self)
     }
     
+    // remove a subview from the specified container
     func hideContentController(container: UIView, content: UIViewController) {
         content.willMoveToParentViewController(nil)
         content.view.removeFromSuperview()
@@ -92,14 +105,14 @@ class MainContainerViewController: UIViewController {
     }
     
     // MARK: - Navigation
-
-
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
         var destinationViewController = segue.destinationViewController as ComposeViewController
 
+        // instantiate the transition
         fadeTransition = FadeTransition()
         fadeTransition.duration = 0.3
+
         destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
         destinationViewController.transitioningDelegate = fadeTransition
     }

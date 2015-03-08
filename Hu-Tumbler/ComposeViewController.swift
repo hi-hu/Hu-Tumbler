@@ -42,6 +42,7 @@ class ComposeViewController: UIViewController {
             
             var btn = btnArray[index]
             
+            // set the position Y of the buttons based on row
             if index < 3 {
                 btn.frame.origin.y = CGFloat(buttonOrigin[0]) + self.view.frame.height
             } else {
@@ -61,9 +62,10 @@ class ComposeViewController: UIViewController {
             
             var delay = delayArray[index]
             var btn = btnArray[index]
-            
+
             UIView.animateWithDuration(0.5, delay: delay, usingSpringWithDamping: 0.8, initialSpringVelocity: 10, options: nil, animations: { () -> Void in
 
+                // check to see if animating direction is IN
                 if animateIn {
                     btn.frame.origin.y = btn.frame.origin.y - self.view.frame.height
                 } else {
@@ -71,11 +73,12 @@ class ComposeViewController: UIViewController {
                 }
 
             }) { (Bool) -> Void in
-                // code
+                // do nothing upon completion
             }
         }
     }
     
+    // will be overridden by custom dismiss
     @IBAction func dismissDidPress(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
