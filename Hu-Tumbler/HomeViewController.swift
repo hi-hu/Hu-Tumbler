@@ -9,23 +9,13 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
-    @IBOutlet weak var loginModalView: UIView!
-    @IBOutlet weak var loginForm: UIView!
-    @IBOutlet weak var emailTF: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func loginDidPress(sender: AnyObject) {
-        // show login field
     }
 }

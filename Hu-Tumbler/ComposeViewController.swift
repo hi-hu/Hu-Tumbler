@@ -25,7 +25,7 @@ class ComposeViewController: UIViewController {
     override func viewDidLoad() {
 
         super.viewDidLoad()
-        
+
         btnArray = [textBtn, photoBtn, quoteBtn, linkBtn, chatBtn, videoBtn]
     }
 

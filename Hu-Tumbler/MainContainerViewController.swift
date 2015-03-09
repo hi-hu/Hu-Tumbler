@@ -12,6 +12,7 @@ class MainContainerViewController: UIViewController {
     
     @IBOutlet weak var mainContainerVC: UIView!
     @IBOutlet weak var exploreImage: UIImageView!
+    @IBOutlet weak var loginBtn: UIButton!
     
     // array of tab controller buttons
     @IBOutlet var tabControlButtons: [UIButton]!
@@ -27,8 +28,9 @@ class MainContainerViewController: UIViewController {
     // index defaulted to home
     var selectedIndex: Int! = 0
     
-    // custom transition
-    var fadeTransition: FadeTransition!
+    // custom transitions
+    var composeTransition: FadeTransition!
+    var loginTransition: LoginTransition!
 
     override func viewDidLoad() {
         
@@ -71,6 +73,12 @@ class MainContainerViewController: UIViewController {
         
         var oldIndex = selectedIndex
         selectedIndex = sender.tag
+    
+        if selectedIndex != 0 {
+            loginBtn.hidden = true
+        } else {
+            loginBtn.hidden = false
+        }
         
         if selectedIndex == 1 {
             exploreImage.hidden = true
@@ -90,6 +98,10 @@ class MainContainerViewController: UIViewController {
         performSegueWithIdentifier("composeSegue", sender: self)
     }
 
+    @IBAction func loginDidPress(sender: AnyObject) {
+        performSegueWithIdentifier("loginSegue", sender: self)
+    }
+
     // add a subbview to the specified container
     func displayContentController(container: UIView, content: UIViewController) {
         addChildViewController(content)
@@ -107,14 +119,25 @@ class MainContainerViewController: UIViewController {
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
-        var destinationViewController = segue.destinationViewController as ComposeViewController
+        var destinationViewController = segue.destinationViewController as UIViewController
+        
+        if segue.identifier == "composeSegue" {
 
-        // instantiate the transition
-        fadeTransition = FadeTransition()
-        fadeTransition.duration = 0.3
+            // instantiate the transition
+            composeTransition = FadeTransition()
+            composeTransition.duration = 0.3
 
-        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
-        destinationViewController.transitioningDelegate = fadeTransition
+            destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            destinationViewController.transitioningDelegate = composeTransition
+            
+        } else if segue.identifier == "loginSegue" {
+            // instantiate the transition
+            loginTransition = LoginTransition()
+            loginTransition.duration = 0.3
+            
+            destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            destinationViewController.transitioningDelegate = loginTransition
+        }
     }
 
 }
