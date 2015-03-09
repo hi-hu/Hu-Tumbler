@@ -1,6 +1,6 @@
 # Codepath Week 1 Assignment
 
-- Objective: Basic prototyping and navigation
+- Objective: Advanced Navigation
 - Hours: 8+
 - Status: All required and optional stories.
 
