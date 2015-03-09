@@ -204,6 +204,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1261"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" id="VyP-Ck-Sr4">
+                                <rect key="frame" x="130" y="230" width="61" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="loading-1" id="Ts5-37-ERJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="61" height="19"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="tf8-nK-XtN">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="1305"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -224,6 +235,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1261"/>
                     <connections>
+                        <outlet property="loadingImage" destination="Ts5-37-ERJ" id="03M-6S-gsp"/>
                         <outlet property="trendingFeedImage" destination="FII-WK-vXI" id="hNO-WV-gFc"/>
                         <outlet property="trendingSV" destination="tf8-nK-XtN" id="583-aB-1mn"/>
                     </connections>
@@ -391,6 +403,7 @@
         <image name="home_selected_icon" width="35" height="35"/>
         <image name="home_spinner" width="146" height="146"/>
         <image name="link_icon" width="75" height="95"/>
+        <image name="loading-1" width="61" height="19"/>
         <image name="login-fields" width="300" height="88"/>
         <image name="login_cancel" width="150" height="44"/>
         <image name="login_cancel_selected" width="150" height="44"/>

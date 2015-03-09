@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B86C8AFA1AAD718100792F8F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86C8AF91AAD718100792F8F /* Common.swift */; };
 		B87B90421AABD2E30089EF5E /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B90411AABD2E30089EF5E /* BaseTransition.swift */; };
 		B87B90441AABD2EB0089EF5E /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B90431AABD2EB0089EF5E /* FadeTransition.swift */; };
 		B87B90461AACF63D0089EF5E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B90451AACF63D0089EF5E /* LoginViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B86C8AF91AAD718100792F8F /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		B87B90411AABD2E30089EF5E /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
 		B87B90431AABD2EB0089EF5E /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 		B87B90451AACF63D0089EF5E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				B87B90471AAD2E120089EF5E /* LoginTransition.swift */,
 				B87B90411AABD2E30089EF5E /* BaseTransition.swift */,
 				B87B90431AABD2EB0089EF5E /* FadeTransition.swift */,
+				B86C8AF91AAD718100792F8F /* Common.swift */,
 				B8E1E2971AA9FEF80061525A /* View Controllers */,
 				B8E1E27B1AA951580061525A /* Main.storyboard */,
 				B8E1E27E1AA951580061525A /* Images.xcassets */,
@@ -252,6 +255,7 @@
 			files = (
 				B8E1E29D1AAA00B30061525A /* SearchViewController.swift in Sources */,
 				B8E1E2A31AAA04900061525A /* TrendingViewController.swift in Sources */,
+				B86C8AFA1AAD718100792F8F /* Common.swift in Sources */,
 				B8E1E27A1AA951580061525A /* ViewController.swift in Sources */,
 				B8E1E2A11AAA03F00061525A /* AccountViewController.swift in Sources */,
 				B87B90421AABD2E30089EF5E /* BaseTransition.swift in Sources */,

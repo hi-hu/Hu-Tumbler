@@ -14,11 +14,17 @@ class TrendingViewController: UIViewController {
     @IBOutlet weak var trendingSV: UIScrollView!
     @IBOutlet weak var trendingFeedImage: UIImageView!
 
+    @IBOutlet weak var loadingImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         trendingSV.contentSize = trendingFeedImage.frame.size
+        trendingSV.alpha = 0
         
+        // display loading iamge
+        var images = UIImage.animatedImageNamed("loading-", duration: 0.7)
+        loadingImage.image = images
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,15 +32,13 @@ class TrendingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // delay the reveal of feed
+    override func viewDidAppear (animated: Bool) {
+        delay(1.0, { () -> () in
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
+                self.loadingImage.alpha = 0
+                self.trendingSV.alpha = 1
+            })
+        })
     }
-    */
-
 }
