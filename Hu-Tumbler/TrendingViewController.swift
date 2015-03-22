@@ -23,7 +23,7 @@ class TrendingViewController: UIViewController {
         trendingSV.alpha = 0
         
         // display loading iamge
-        var images = UIImage.animatedImageNamed("loading-", duration: 0.7)
+        var images = UIImage.animatedImageNamed("loading_", duration: 3.0)
         loadingImage.image = images
     }
 
@@ -34,7 +34,7 @@ class TrendingViewController: UIViewController {
     
     // delay the reveal of feed
     override func viewDidAppear (animated: Bool) {
-        delay(1.0, { () -> () in
+        delay(10.0, { () -> () in
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.loadingImage.alpha = 0
                 self.trendingSV.alpha = 1
